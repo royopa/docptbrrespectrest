@@ -35,16 +35,16 @@ Bootstrap é bem simples, basta criar uma instância de Respect\Rest\Router.
     $r3 = new Router;
 ```
 
-Pressupomos que você tenha um .htaccess que redireciona para este arquivo PHP e que esteja executando-o a partir da raiz do dominio (http://example.com/ sem qualquer subpasta).
+Pressupomos que você tenha um .htaccess que redireciona para este arquivo PHP e que esteja executando-o a partir da raiz do domínio (http://example.com/ sem qualquer subpasta).
 
-Se você deseja utiliza-lo a partir de uma subpasta, basta passar a caminho para o router:
+Se você deseja utilizá-lo a partir de uma subpasta, basta passar a caminho para o router:
 ```php
     $r3 = new Router('/myapp');
 ```
 
 Com isto o roteador irá trabalhar a partir de: http://example.com/myapp/
 
-Você também pode utilizar o Router sem utilização de um aquivo .htaccess, desta maneira você usará variável CGI PATH_INFO, você pode declara-lo da seguinte maneira:
+Você também pode utilizar o Router sem utilização de um aquivo .htaccess, desta maneira você usará variável CGI PATH_INFO, você pode declará-la da seguinte maneira:
 ```php
     $r3 = new Router('/index.php/');
 ```
@@ -64,14 +64,14 @@ O router é auto-executado, você não precisa realizar nenhuma ação para que 
     $r3->isAutoDispatched = false;
 ```
 
-Note que para ver as excessões é preciso seguir o próximo passo.
+Note que para ver as exceções é preciso seguir o próximo passo.
 
 You can then dispatch it yourself at the end of the proccess:
 ```php
     print $r3->run();
 ```
 
-Você pode imprimir a saída ou armazena-la em uma variável, se assim desejar. Isso permite um melhor teste e a integração do Router com sua app existente.
+Você pode imprimir a saída ou armazená-la em uma variável, se assim desejar. Isso permite um melhor teste e a integração do Router com sua app existente.
 
 ### Simple Routing
 [Top][]
@@ -102,7 +102,7 @@ Você pode declarar rotas que recebam parâmetros da URL.Para isso cada parâmet
     });
 ```
 
-Acessando http://localhost/users/alganet ou qualquer outro nome de usuário, além do Alganet, o resultado será "User alganet"(ou o nome escolhido por você.).Multiplos parâmetros podem ser definidos:
+Acessando http://localhost/users/alganet ou qualquer outro nome de usuário, além do Alganet, o resultado será "User alganet" (ou o nome escolhido por você.). Multiplos parâmetros podem ser definidos:
 
 ```php
     $r3->get('/users/*/lists/*', function($user, $list) {
